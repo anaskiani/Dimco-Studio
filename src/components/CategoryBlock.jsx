@@ -32,18 +32,35 @@ export default function CategoryBlock({ category, onThumbnailClick }) {
         <h3 className="text-xl sm:text-2xl font-bold text-white">
           {category.title}
         </h3>
-        <span className="text-sm text-zinc-500 font-medium">
-          {category.thumbnails.length} designs
-        </span>
       </motion.div>
 
-      {/* Thumbnail Grid */}
+      {/* Mobile Slider (< sm) */}
+      <div className="sm:hidden -mx-4 overflow-hidden relative">
+        <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-[#09090b] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-[#09090b] to-transparent z-10 pointer-events-none" />
+        
+        <div className="flex w-max animate-marquee gap-3 py-1">
+          {[...category.thumbnails, ...category.thumbnails].map((thumb, i) => {
+            const actualIdx = i % category.thumbnails.length;
+            return (
+              <div key={`${thumb.id}-${i}`} className="w-[75vw] flex-shrink-0">
+                <ThumbnailCard
+                  thumbnail={thumb}
+                  onClick={() => onThumbnailClick(category.id, actualIdx)}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Desktop Grid (>= sm) */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-80px' }}
-        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
+        className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-4 gap-4"
       >
         {category.thumbnails.map((thumb, idx) => (
           <motion.div key={thumb.id} variants={itemVariants}>

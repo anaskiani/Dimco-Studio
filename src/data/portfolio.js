@@ -65,12 +65,17 @@ export const categories = [
 ];
 
 export const clients = [
-  { name: "TechWithTom", initials: "TT", gradient: "from-cyan-500 to-blue-600" },
-  { name: "FinanceFlow", initials: "FF", gradient: "from-emerald-500 to-green-600" },
-  { name: "GameVault", initials: "GV", gradient: "from-purple-500 to-violet-600" },
-  { name: "StudyWithSara", initials: "SS", gradient: "from-pink-500 to-rose-600" },
-  { name: "VlogVibes", initials: "VV", gradient: "from-amber-500 to-orange-600" },
-  { name: "CodeCraft", initials: "CC", gradient: "from-sky-500 to-indigo-600" },
-  { name: "HealthHub", initials: "HH", gradient: "from-teal-500 to-emerald-600" },
-  { name: "MrBeastFan", initials: "MF", gradient: "from-red-500 to-pink-600" },
+  { name: "IM Alex Banzea", image: "/images/clients/alexBanzea.png", initials: "AB", gradient: "from-cyan-500 to-blue-600" },
+  { name: "GMHikaru", image: "/images/clients/GMHikaru.jpeg", initials: "GH", gradient: "from-emerald-500 to-green-600" },
+  { name: "Take Take Take", image: "/images/clients/taketaketake.png", initials: "TT", gradient: "from-purple-500 to-violet-600" },
+  { name: "Chunkz", image: "/images/clients/chunkz.png", initials: "CH", gradient: "from-pink-500 to-rose-600" },
+  { name: "Witty Alien", image: "/images/clients/wittyalien.png", initials: "WA", gradient: "from-amber-500 to-orange-600" },
+  { name: "Madilynn Cameron", image: "/images/clients/madeline cameron.png", initials: "MC", gradient: "from-sky-500 to-indigo-600" },
+  { name: "EvenOut", image: "/images/clients/evenout.png", initials: "EO", gradient: "from-red-500 to-pink-600" },
+  { name: "Dina Belenkaya", image: "/images/clients/dina.png", initials: "DB", gradient: "from-teal-500 to-emerald-600" },
+  { name: "Mooda", image: "/images/clients/mooda.png", initials: "MD", gradient: "from-fuchsia-500 to-purple-600" },
+  { name: "Clickables", image: "/images/clients/clickables.png", initials: "CL", gradient: "from-orange-500 to-red-600" },
+  { name: "Tdawg smitty", image: "/images/clients/tdawgsmity.png", initials: "TS", gradient: "from-lime-500 to-green-600" },
+  { name: "C Squared Podcast", image: "/images/clients/Csquare-podcasts.png", initials: "CS", gradient: "from-blue-500 to-cyan-600" },
+  { name: "Nikol Johnson", image: "/images/clients/nkole johnson.png", initials: "NJ", gradient: "from-rose-500 to-red-600" },
 ];

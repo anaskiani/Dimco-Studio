@@ -3,14 +3,22 @@ import { clients } from '../data/portfolio';
 
 function ClientCard({ client }) {
   return (
-    <div className="flex-shrink-0 mx-4">
-      <div className="flex flex-col items-center gap-3 p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-zinc-700/50 transition-colors duration-300 w-40">
+    <div className="flex-shrink-0 mx-4 h-full">
+      <div className="flex flex-col items-center justify-between gap-3 p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-zinc-700/50 transition-colors duration-300 w-40 h-full">
         {/* Channel Avatar */}
-        <div
-          className={`w-16 h-16 rounded-full bg-gradient-to-br ${client.gradient} flex items-center justify-center font-bold text-white text-lg shadow-lg`}
-        >
-          {client.initials}
-        </div>
+        {client.image ? (
+          <img
+            src={client.image}
+            alt={client.name}
+            className="w-16 h-16 rounded-full object-cover shadow-lg"
+          />
+        ) : (
+          <div
+            className={`w-16 h-16 rounded-full bg-gradient-to-br ${client.gradient} flex items-center justify-center font-bold text-white text-lg shadow-lg`}
+          >
+            {client.initials}
+          </div>
+        )}
         {/* Channel Name */}
         <h4 className="font-semibold text-white text-sm text-center leading-tight">
           {client.name}
