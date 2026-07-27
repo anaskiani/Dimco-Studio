@@ -111,19 +111,9 @@ export const categories = [
     "title": "Podcast",
     "thumbnails": [
       {
-        "id": 1,
-        "src": "/images/Podcast/C-Squared _Daniel Naroditsky _ Kasparovs Intense Coaching Life As A Chess Pro Mental Health.webp",
-        "title": "C Squared Daniel Naroditsky Kasparovs Intense Coaching Life As A Chess Pro Mental Health"
-      },
-      {
         "id": 2,
         "src": "/images/Podcast/C-Squared _Danya Naroditsky Answers Kramniks Questions In EXPLOSIVE Interview.webp",
         "title": "C Squared Danya Naroditsky Answers Kramniks Questions In EXPLOSIVE Interview"
-      },
-      {
-        "id": 3,
-        "src": "/images/Podcast/C-Squared _Danya Naroditsky _ The Real Story Behind His Titled Tuesday Controversy.webp",
-        "title": "C Squared Danya Naroditsky The Real Story Behind His Titled Tuesday Controversy"
       },
       {
         "id": 4,
@@ -131,19 +121,9 @@ export const categories = [
         "title": "C Squared Dear Vladimir..."
       },
       {
-        "id": 5,
-        "src": "/images/Podcast/C-Squared _DrLupo Is DONE After Cheating In 100K PogChamps Tournament.webp",
-        "title": "C Squared DrLupo Is DONE After Cheating In 100K PogChamps Tournament"
-      },
-      {
         "id": 6,
         "src": "/images/Podcast/C-Squared _Dubov _ What Is Talent Training Magnus For The Match Against Fabiano.webp",
         "title": "C Squared Dubov What Is Talent Training Magnus For The Match Against Fabiano"
-      },
-      {
-        "id": 7,
-        "src": "/images/Podcast/C-Squared _Fabiano Attempts The DrLupo Challenge Maximum Difficulty.webp",
-        "title": "C Squared Fabiano Attempts The DrLupo Challenge Maximum Difficulty"
       },
       {
         "id": 8,
@@ -151,19 +131,9 @@ export const categories = [
         "title": "C Squared Fabiano Caruana Ranks The Best Olympiad Teams"
       },
       {
-        "id": 9,
-        "src": "/images/Podcast/C-Squared _Fabiano Caruanas Olympiad Tier List Review INSANE Performance .webp",
-        "title": "C Squared Fabiano Caruanas Olympiad Tier List Review INSANE Performance"
-      },
-      {
         "id": 10,
         "src": "/images/Podcast/C-Squared _Garry Kasparov _ Coaching Magnus Hikaru Match VS Kramnik AI Computer Era.webp",
         "title": "C Squared Garry Kasparov Coaching Magnus Hikaru Match VS Kramnik AI Computer Era"
-      },
-      {
-        "id": 11,
-        "src": "/images/Podcast/C-Squared _GothamChess _ Fame Mental Health Cheating Hans As A World Champion _ C-Squared _018.webp",
-        "title": "C Squared GothamChess Fame Mental Health Cheating Hans As A World Champion C Squared 018"
       },
       {
         "id": 12,
@@ -171,19 +141,9 @@ export const categories = [
         "title": "C Squared Hikaru Nakamura Carlsens Decision Training with Kasparov New Generation C Squared E004"
       },
       {
-        "id": 13,
-        "src": "/images/Podcast/C-Squared _Judit Polgar _ Legendary Coaching System Bobby Fischer Chess Psychology _ C-Squared _016.webp",
-        "title": "C Squared Judit Polgar Legendary Coaching System Bobby Fischer Chess Psychology C Squared 016"
-      },
-      {
         "id": 14,
         "src": "/images/Podcast/C-Squared _Nepomniachtchi _ Candidates Run Matches VS Ding Magnus Cheating.webp",
         "title": "C Squared Nepomniachtchi Candidates Run Matches VS Ding Magnus Cheating"
-      },
-      {
-        "id": 15,
-        "src": "/images/Podcast/C-Squared _Sagar Shah _ From Travelling Journalist To Building A Chess Media Empire.webp",
-        "title": "C Squared Sagar Shah From Travelling Journalist To Building A Chess Media Empire"
       },
       {
         "id": 16,
@@ -191,19 +151,9 @@ export const categories = [
         "title": "C Squared The Kramnik Files Unveiling the Dark Side of Online Chess"
       },
       {
-        "id": 17,
-        "src": "/images/Podcast/C-Squared _This Is A Story About Talent _ Fabis Response To Dubov.webp",
-        "title": "C Squared This Is A Story About Talent Fabis Response To Dubov"
-      },
-      {
         "id": 18,
         "src": "/images/Podcast/C-Squared _What Happened At The CANDIDATES_ Fabianos Highlights.webp",
         "title": "C Squared What Happened At The CANDIDATES Fabianos Highlights"
-      },
-      {
-        "id": 19,
-        "src": "/images/Podcast/C-Squared _WHAT____.webp",
-        "title": "C Squared WHAT"
       },
       {
         "id": 20,
@@ -217,19 +167,9 @@ export const categories = [
     "title": "Lifestyle & Vlog",
     "thumbnails": [
       {
-        "id": 1,
-        "src": "/images/vlog/1.jpeg",
-        "title": "1"
-      },
-      {
         "id": 2,
         "src": "/images/vlog/2.jpeg",
         "title": "2"
-      },
-      {
-        "id": 3,
-        "src": "/images/vlog/3.jpeg",
-        "title": "3"
       },
       {
         "id": 4,
@@ -237,19 +177,9 @@ export const categories = [
         "title": "4"
       },
       {
-        "id": 5,
-        "src": "/images/vlog/Chunkz_10 VS 1000 STEAK ft KSI AJ.webp",
-        "title": "Chunkz 10 VS 1000 STEAK ft KSI AJ"
-      },
-      {
         "id": 6,
         "src": "/images/vlog/Chunkz_Eating Cheap VS Expensive Food Challenge.webp",
         "title": "Chunkz Eating Cheap VS Expensive Food Challenge"
-      },
-      {
-        "id": 7,
-        "src": "/images/vlog/Chunkz_Match The Face To The Body.webp",
-        "title": "Chunkz Match The Face To The Body"
       },
       {
         "id": 8,
@@ -257,19 +187,9 @@ export const categories = [
         "title": "Chunkz We Spent 100000 On MrBeasts Credit Card Ft Speed"
       },
       {
-        "id": 9,
-        "src": "/images/vlog/EvenOut_Appearing at Both Ends of the Escalator at the Same Time.webp",
-        "title": "EvenOut Appearing at Both Ends of the Escalator at the Same Time"
-      },
-      {
         "id": 10,
         "src": "/images/vlog/EvenOut_Time Traveller Twin Pranks-Best of EvenOut.webp",
         "title": "EvenOut Time Traveller Twin Pranks Best of EvenOut"
-      },
-      {
-        "id": 11,
-        "src": "/images/vlog/EvenOut_TRAVELLING THROUGH A TIME PORTAL TWIN PRANK.webp",
-        "title": "EvenOut TRAVELLING THROUGH A TIME PORTAL TWIN PRANK"
       },
       {
         "id": 12,
@@ -277,19 +197,9 @@ export const categories = [
         "title": "EvenOut TWIN PICTURE SWITCH UP PRANK"
       },
       {
-        "id": 13,
-        "src": "/images/vlog/Madilynn Cameron_400 MAKEUP SHOPPING HAUL CHALLENGE.webp",
-        "title": "Madilynn Cameron 400 MAKEUP SHOPPING HAUL CHALLENGE"
-      },
-      {
         "id": 14,
         "src": "/images/vlog/Madilynn Cameron_5 NIGHTS AT FREDDYS I cried and QUIT PART 1.webp",
         "title": "Madilynn Cameron 5 NIGHTS AT FREDDYS I cried and QUIT PART 1"
-      },
-      {
-        "id": 15,
-        "src": "/images/vlog/Madilynn Cameron_Dirty Soda Challenge_ was NOT what I was expecting.webp",
-        "title": "Madilynn Cameron Dirty Soda Challenge was NOT what I was expecting"
       },
       {
         "id": 16,
@@ -297,19 +207,9 @@ export const categories = [
         "title": "Madilynn Cameron FAILING at Virtual Reality Jobs I got FiReD cookout"
       },
       {
-        "id": 17,
-        "src": "/images/vlog/WhatsApp Image 2026-07-26 at 11.30.30 PM 1.jpeg",
-        "title": "WhatsApp Image 2026 07 26 at 11.30.30 PM 1"
-      },
-      {
         "id": 18,
         "src": "/images/vlog/WhatsApp Image 2026-07-26 at 11.30.31 PM.jpeg",
         "title": "WhatsApp Image 2026 07 26 at 11.30.31 PM"
-      },
-      {
-        "id": 19,
-        "src": "/images/vlog/WhatsApp Image 2026-07-26 at 11.30.32 PM 1.jpeg",
-        "title": "WhatsApp Image 2026 07 26 at 11.30.32 PM 1"
       },
       {
         "id": 20,
