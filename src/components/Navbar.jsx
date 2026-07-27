@@ -118,7 +118,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden z-[60]"
               style={{ top: 0 }}
             />
             {/* Drawer */}
@@ -127,7 +127,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-72 bg-zinc-950/95 backdrop-blur-xl border-l border-zinc-800/50 md:hidden flex flex-col pt-20 px-6"
+              className="fixed top-0 right-0 bottom-0 w-72 bg-zinc-950/95 backdrop-blur-xl border-l border-zinc-800/50 md:hidden flex flex-col pt-20 px-6 z-[70]"
             >
               {navLinks.map((link, i) =>
                 link.isRoute ? (
