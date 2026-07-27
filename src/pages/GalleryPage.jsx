@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HiArrowLeft } from 'react-icons/hi';
-import { categories } from '../data/portfolio';
+import { galleryCategories as categories } from '../data/portfolio';
 import ThumbnailCard from '../components/ThumbnailCard';
 import Lightbox from '../components/Lightbox';
 
@@ -158,6 +158,7 @@ export default function GalleryPage() {
         onClose={closeLightbox}
         onPrev={() => navigateLightbox(-1)}
         onNext={() => navigateLightbox(1)}
+        dataCategories={categories}
       />
     </div>
   );

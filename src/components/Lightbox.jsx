@@ -37,9 +37,10 @@ export default function Lightbox({
   onClose,
   onPrev,
   onNext,
+  dataCategories = categories,
 }) {
   // Find current category and thumbnail
-  const category = categories.find((c) => c.id === categoryId);
+  const category = dataCategories.find((c) => c.id === categoryId);
   const thumbnails = category?.thumbnails || [];
   const currentThumb = thumbnails[imageIndex];
   const total = thumbnails.length;
