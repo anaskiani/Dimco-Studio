@@ -5,11 +5,11 @@ export const siteConfig = {
   email: "anaskiani7131@gmail.com",
   phone: "03279846609",
   socials: {
-    instagram: "https://instagram.com/anaskiani",
+    instagram: "https://instagram.com/anas_kiani_",
     behance: "https://behance.net/anaskiani",
     fiverr: "https://fiverr.com/anaskiani",
     youtube: "https://youtube.com/@anaskiani",
-    twitter: "https://x.com/anaskiani",
+    twitter: "https://x.com/ByAnasDesigns",
   },
 };
 
