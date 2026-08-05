@@ -1,12 +1,8 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  FaInstagram,
-  FaBehance,
-  FaYoutube,
-} from 'react-icons/fa';
-import { SiFiverr } from 'react-icons/si';
+import { FaInstagram, FaDiscord } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { HiMail, HiPhone } from 'react-icons/hi';
+import { HiMail, HiPhone, HiCheck, HiOutlineDocumentDuplicate } from 'react-icons/hi';
 import { siteConfig } from '../data/portfolio';
 
 const socialLinks = [
@@ -15,12 +11,20 @@ const socialLinks = [
 ];
 
 export default function ContactSection() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyDiscord = () => {
+    navigator.clipboard.writeText(siteConfig.socials.discordUsername);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="relative py-20 sm:py-28">
       {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(139,92,246,0.06)_0%,_transparent_60%)]" />
 
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,13 +47,13 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        {/* Email & Phone */}
+        {/* Email, Phone & Discord */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
           <a
             href={`mailto:${siteConfig.email}`}
@@ -70,6 +74,26 @@ export default function ContactSection() {
             </div>
             <span className="text-white font-medium text-sm">{siteConfig.phone}</span>
           </a>
+
+          {/* Discord copy button */}
+          <button
+            onClick={handleCopyDiscord}
+            className="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800/50 hover:border-indigo-500/40 transition-all duration-300 group relative cursor-pointer"
+            title="Click to copy Discord username"
+          >
+            <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500/20 transition-colors">
+              <FaDiscord size={20} />
+            </div>
+            <div className="text-left">
+              <span className="block text-white font-medium text-sm">{siteConfig.socials.discordUsername}</span>
+              <span className="block text-[11px] text-zinc-500">
+                {copied ? 'Copied to clipboard!' : 'Click to copy username'}
+              </span>
+            </div>
+            <div className="ml-1 text-zinc-400 group-hover:text-indigo-400 transition-colors">
+              {copied ? <HiCheck size={18} className="text-green-400" /> : <HiOutlineDocumentDuplicate size={18} />}
+            </div>
+          </button>
         </motion.div>
 
         {/* Social Icons */}

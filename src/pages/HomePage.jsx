@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import PortfolioSection from '../components/PortfolioSection';
 import ClientsSection from '../components/ClientsSection';
@@ -10,7 +8,7 @@ import Footer from '../components/Footer';
 export default function HomePage({ onOpenLightbox }) {
   return (
     <>
-      <Hero />
+      <Hero onOpenLightbox={onOpenLightbox} />
       <PortfolioSection onThumbnailClick={onOpenLightbox} />
       <ClientsSection />
       <ProcessSection />

@@ -6,14 +6,36 @@ export const siteConfig = {
   phone: "03279846609",
   socials: {
     instagram: "https://instagram.com/anas_kiani_",
-    behance: "https://behance.net/anaskiani",
-    fiverr: "https://fiverr.com/anaskiani",
-    youtube: "https://youtube.com/@anaskiani",
     twitter: "https://x.com/ByAnasDesigns",
+    discord: "https://discord.com/users/anas_kiani",
+    discordUsername: "anas_kiani",
   },
 };
 
+export const topClassThumbnails = [
+  { id: 1, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.02.58 PM (1).jpeg", title: "Top Class Thumbnail 1" },
+  { id: 2, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.02.58 PM.jpeg", title: "Top Class Thumbnail 2" },
+  { id: 3, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.03.27 PM.jpeg", title: "Top Class Thumbnail 3" },
+  { id: 4, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.03.28 PM.jpeg", title: "Top Class Thumbnail 4" },
+  { id: 5, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.05.35 PM.jpeg", title: "Top Class Thumbnail 5" },
+  { id: 6, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.05.36 PM (1).jpeg", title: "Top Class Thumbnail 6" },
+  { id: 7, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.05.36 PM.jpeg", title: "Top Class Thumbnail 7" },
+  { id: 8, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.05.37 PM (1).jpeg", title: "Top Class Thumbnail 8" },
+  { id: 9, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.05.37 PM.jpeg", title: "Top Class Thumbnail 9" },
+  { id: 10, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.05.38 PM.jpeg", title: "Top Class Thumbnail 10" },
+  { id: 11, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.06.16 PM (1).jpeg", title: "Top Class Thumbnail 11" },
+  { id: 12, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.06.16 PM (2).jpeg", title: "Top Class Thumbnail 12" },
+  { id: 13, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.06.16 PM (3).jpeg", title: "Top Class Thumbnail 13" },
+  { id: 14, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.06.16 PM.jpeg", title: "Top Class Thumbnail 14" },
+  { id: 15, src: "/images/featured/WhatsApp Image 2026-08-04 at 12.06.17 PM.jpeg", title: "Top Class Thumbnail 15" },
+];
+
 export const categories = [
+  {
+    "id": "featured",
+    "title": "Top Class Designs",
+    "thumbnails": topClassThumbnails
+  },
   {
     "id": "education",
     "title": "Educational",
@@ -221,19 +243,18 @@ export const categories = [
 ];
 
 export const clients = [
-  { name: "IM Alex Banzea", image: "/images/clients/alexBanzea.png", initials: "AB", gradient: "from-cyan-500 to-blue-600" },
-  { name: "GMHikaru", image: "/images/clients/GMHikaru.jpeg", initials: "GH", gradient: "from-emerald-500 to-green-600" },
-  { name: "Take Take Take", image: "/images/clients/taketaketake.png", initials: "TT", gradient: "from-purple-500 to-violet-600" },
-  { name: "Chunkz", image: "/images/clients/chunkz.png", initials: "CH", gradient: "from-pink-500 to-rose-600" },
-  { name: "Witty Alien", image: "/images/clients/wittyalien.png", initials: "WA", gradient: "from-amber-500 to-orange-600" },
-  { name: "Madilynn Cameron", image: "/images/clients/madeline cameron.png", initials: "MC", gradient: "from-sky-500 to-indigo-600" },
-  { name: "EvenOut", image: "/images/clients/evenout.png", initials: "EO", gradient: "from-red-500 to-pink-600" },
-  { name: "Dina Belenkaya", image: "/images/clients/dina.png", initials: "DB", gradient: "from-teal-500 to-emerald-600" },
-  { name: "Mooda", image: "/images/clients/mooda.png", initials: "MD", gradient: "from-fuchsia-500 to-purple-600" },
-  { name: "Clickables", image: "/images/clients/clickables.png", initials: "CL", gradient: "from-orange-500 to-red-600" },
-  { name: "Tdawg smitty", image: "/images/clients/tdawgsmity.png", initials: "TS", gradient: "from-lime-500 to-green-600" },
-  { name: "C Squared Podcast", image: "/images/clients/Csquare-podcasts.png", initials: "CS", gradient: "from-blue-500 to-cyan-600" },
-  { name: "Nikol Johnson", image: "/images/clients/nkole johnson.png", initials: "NJ", gradient: "from-rose-500 to-red-600" },
+  { name: "C-Squared Podcast", image: "/images/clients/Csquare-podcasts.png", initials: "CS", gradient: "from-blue-500 to-cyan-600", subscribers: "94.7K", channelUrl: "https://www.youtube.com/@csqpod" },
+  { name: "IM Alex Banzea", image: "/images/clients/alexBanzea.png", initials: "AB", gradient: "from-cyan-500 to-blue-600", subscribers: "136K", channelUrl: "https://www.youtube.com/@AlexBanzea" },
+  { name: "Take Take Take", image: "/images/clients/taketaketake.png", initials: "TT", gradient: "from-purple-500 to-violet-600", subscribers: "196K", channelUrl: "https://www.youtube.com/@TakeTakeTakeApp" },
+  { name: "Witty Alien", image: "/images/clients/wittyalien.png", initials: "WA", gradient: "from-amber-500 to-orange-600", subscribers: "215K", channelUrl: "https://www.youtube.com/@witty_alienclips" },
+  { name: "Madilynn Cameron", image: "/images/clients/madeline cameron.png", initials: "MC", gradient: "from-sky-500 to-indigo-600", subscribers: "314K", channelUrl: "https://www.youtube.com/@themadivlog" },
+  { name: "Mooda", image: "/images/clients/mooda.png", initials: "MD", gradient: "from-fuchsia-500 to-purple-600", subscribers: "333K", channelUrl: "https://www.youtube.com/channel/UCWddLWvMbnB2990RjPIhogg" },
+  { name: "Tdawg Smitty", image: "/images/clients/tdawgsmity.png", initials: "TS", gradient: "from-lime-500 to-green-600", subscribers: "621K", channelUrl: "https://www.youtube.com/@tdawgsmitty" },
+  { name: "Dina Belenkaya", image: "/images/clients/dina.png", initials: "DB", gradient: "from-teal-500 to-emerald-600", subscribers: "941K", channelUrl: "https://www.youtube.com/@dinabelenkaya" },
+  { name: "Nikol Johnson", image: "/images/clients/nkole johnson.png", initials: "NJ", gradient: "from-rose-500 to-red-600", subscribers: "1.16M", channelUrl: "https://www.youtube.com/@nikoljohnson" },
+  { name: "EvenOut", image: "/images/clients/evenout.png", initials: "EO", gradient: "from-red-500 to-pink-600", subscribers: "1.58M", channelUrl: "https://www.youtube.com/@evenout" },
+  { name: "GMHikaru", image: "/images/clients/GMHikaru.jpeg", initials: "GH", gradient: "from-emerald-500 to-green-600", subscribers: "3.21M", channelUrl: "https://www.youtube.com/@GMHikaru" },
+  { name: "Chunkz", image: "/images/clients/chunkz.png", initials: "CH", gradient: "from-pink-500 to-rose-600", subscribers: "4.02M", channelUrl: "https://www.youtube.com/@Chunkz" },
 ];
 
 

@@ -1,8 +1,42 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HiArrowDown } from 'react-icons/hi';
-import { siteConfig, categories } from '../data/portfolio';
+import { HiArrowDown, HiSparkles } from 'react-icons/hi';
+import { siteConfig, categories, topClassThumbnails } from '../data/portfolio';
 
-export default function Hero() {
+function TopClassCard({ thumb, index, onClick }) {
+  const [imgSrc, setImgSrc] = useState(thumb.src);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.7 + index * 0.08 }}
+      whileHover={{ scale: 1.04, y: -4 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={() => onClick && onClick(thumb)}
+      className="group relative aspect-video rounded-2xl overflow-hidden cursor-pointer border border-zinc-800/80 bg-zinc-900/60 hover:border-cyan-500/50 shadow-xl hover:shadow-cyan-500/15 transition-all duration-300"
+    >
+      <img
+        src={imgSrc}
+        alt={thumb.title}
+        onError={() => {
+          if (thumb.fallbackSrc && imgSrc !== thumb.fallbackSrc) {
+            setImgSrc(thumb.fallbackSrc);
+          }
+        }}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+        <span className="text-cyan-300 font-medium text-xs flex items-center gap-1.5">
+          <HiSparkles size={14} className="text-cyan-400" />
+          <span>Top Class Design</span>
+        </span>
+      </div>
+    </motion.div>
+  );
+}
+
+export default function Hero({ onOpenLightbox }) {
   const handleCTA = (e) => {
     e.preventDefault();
     const el = document.querySelector('#portfolio');
@@ -15,7 +49,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-12"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-16"
     >
       {/* Animated Background Collage */}
       <div className="absolute inset-0 overflow-hidden opacity-[0.12]">
@@ -68,7 +102,7 @@ export default function Hero() {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -147,7 +181,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 flex items-center justify-center gap-8 sm:gap-16"
+          className="mt-16 flex items-center justify-center gap-8 sm:gap-16 mb-16"
         >
           {[
             { value: '500+', label: 'Thumbnails' },
@@ -163,10 +197,37 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
+
+        {/* Top Class Showcase Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="pt-10 border-t border-zinc-800/50 text-center"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+            <HiSparkles size={14} />
+            <span>Top Class Showcase</span>
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+            Featured <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">Top Class</span> Designs
+          </h3>
+          <p className="text-zinc-400 text-sm max-w-md mx-auto mb-8">
+            Hand-picked thumbnail masterpieces engineered for high click-through rates.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-2">
+            {topClassThumbnails.map((thumb, i) => (
+              <TopClassCard
+                key={thumb.id}
+                thumb={thumb}
+                index={i}
+                onClick={() => onOpenLightbox && onOpenLightbox('featured', i)}
+              />
+            ))}
+          </div>
+        </motion.div>
       </div>
-
-
-
     </section>
   );
 }

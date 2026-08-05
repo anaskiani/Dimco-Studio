@@ -32,13 +32,15 @@ export default function PortfolioSection({ onThumbnailClick }) {
         </motion.div>
 
         {/* Category Blocks */}
-        {categories.map((category) => (
-          <CategoryBlock
-            key={category.id}
-            category={category}
-            onThumbnailClick={onThumbnailClick}
-          />
-        ))}
+        {categories
+          .filter((category) => category.id !== 'featured')
+          .map((category) => (
+            <CategoryBlock
+              key={category.id}
+              category={category}
+              onThumbnailClick={onThumbnailClick}
+            />
+          ))}
       </div>
     </section>
   );

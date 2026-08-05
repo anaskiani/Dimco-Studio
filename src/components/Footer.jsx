@@ -1,4 +1,4 @@
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaDiscord } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { siteConfig } from '../data/portfolio';
 
@@ -12,6 +12,7 @@ const navLinks = [
 const socials = [
   { icon: FaInstagram, href: siteConfig.socials.instagram, label: 'Instagram' },
   { icon: FaXTwitter, href: siteConfig.socials.twitter, label: 'Twitter/X' },
+  { icon: FaDiscord, href: siteConfig.socials.discord, label: 'Discord (anas_kiani)' },
 ];
 
 
@@ -81,6 +82,12 @@ export default function Footer() {
                 >
                   {siteConfig.phone}
                 </a>
+              </li>
+              <li>
+                <span className="text-sm text-zinc-500 flex items-center gap-1.5">
+                  <FaDiscord className="text-indigo-400" size={14} />
+                  <span>{siteConfig.socials.discordUsername}</span>
+                </span>
               </li>
             </ul>
           </div>

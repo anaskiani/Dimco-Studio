@@ -1,30 +1,67 @@
 import { motion } from 'framer-motion';
+import { FaYoutube } from 'react-icons/fa';
+import { HiExternalLink } from 'react-icons/hi';
 import { clients } from '../data/portfolio';
 
 function ClientCard({ client }) {
+  // Determine if this is a "big" channel (1M+) for visual emphasis
+  const isBig = client.subscribers.includes('M');
+
   return (
-    <div className="flex-shrink-0 mx-4 h-full">
-      <div className="flex flex-col items-center justify-between gap-3 p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-zinc-700/50 transition-colors duration-300 w-40 h-full">
-        {/* Channel Avatar */}
-        {client.image ? (
-          <img
-            src={client.image}
-            alt={client.name}
-            className="w-16 h-16 rounded-full object-cover shadow-lg"
-          />
-        ) : (
-          <div
-            className={`w-16 h-16 rounded-full bg-gradient-to-br ${client.gradient} flex items-center justify-center font-bold text-white text-lg shadow-lg`}
-          >
-            {client.initials}
+    <a
+      href={client.channelUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-shrink-0 mx-3 group block"
+    >
+      <div
+        className={`relative flex flex-col items-center gap-4 p-6 rounded-2xl border transition-all duration-300 w-52 h-full
+          ${isBig
+            ? 'bg-zinc-900/80 border-zinc-700/60 hover:border-cyan-500/40 hover:shadow-lg hover:shadow-cyan-500/10'
+            : 'bg-zinc-900/60 border-zinc-800/50 hover:border-zinc-600/60 hover:shadow-lg hover:shadow-white/5'
+          }
+        `}
+      >
+        {/* Avatar */}
+        <div className="relative">
+          {client.image ? (
+            <img
+              src={client.image}
+              alt={client.name}
+              className="w-18 h-18 rounded-full object-cover shadow-lg ring-2 ring-zinc-700/50 group-hover:ring-cyan-500/40 transition-all duration-300"
+            />
+          ) : (
+            <div
+              className={`w-18 h-18 rounded-full bg-gradient-to-br ${client.gradient} flex items-center justify-center font-bold text-white text-xl shadow-lg`}
+            >
+              {client.initials}
+            </div>
+          )}
+          {/* Online dot */}
+          <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-red-500 border-2 border-zinc-900 flex items-center justify-center">
+            <FaYoutube size={8} className="text-white" />
           </div>
-        )}
+        </div>
+
         {/* Channel Name */}
-        <h4 className="font-semibold text-white text-sm text-center leading-tight">
+        <h4 className="font-semibold text-white text-sm text-center leading-tight group-hover:text-cyan-300 transition-colors duration-300">
           {client.name}
         </h4>
+
+        {/* Subscriber Count */}
+        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-800/80 border border-zinc-700/40">
+          <FaYoutube size={12} className="text-red-500" />
+          <span className="text-xs font-semibold text-zinc-300">{client.subscribers}</span>
+          <span className="text-[10px] text-zinc-500">subs</span>
+        </div>
+
+        {/* Visit link */}
+        <div className="flex items-center gap-1 text-[11px] text-zinc-500 group-hover:text-cyan-400 transition-colors duration-300">
+          <span>Visit Channel</span>
+          <HiExternalLink size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -66,7 +103,7 @@ export default function ClientsSection() {
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
 
-          <div className="flex animate-marquee hover:[animation-play-state:paused] w-max">
+          <div className="flex animate-marquee hover:[animation-play-state:paused] w-max items-stretch">
             {doubled.map((client, i) => (
               <ClientCard key={`${client.name}-${i}`} client={client} />
             ))}
