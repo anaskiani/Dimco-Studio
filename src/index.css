@@ -4,10 +4,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface: #18181b;
-  --color-surface-hover: #27272a;
-  --color-accent: #22d3ee;
-  --color-accent-secondary: #8b5cf6;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f8fafc;
+  --color-accent: #facc15;
+  --color-accent-secondary: #0f172a;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -18,9 +18,16 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #09090b;
-  color: #fafafa;
+  background-color: #ffffff;
+  color: #0f172a;
   overflow-x: hidden;
+}
+
+/* Dotted Grid Background Pattern */
+.bg-dotted-grid {
+  background-image: radial-gradient(circle, rgb(212, 214, 217) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  background-color: #ffffff;
 }
 
 /* Custom Scrollbar */
@@ -29,19 +36,19 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3f3f46;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
+  background: #94a3b8;
 }
 
-/* Marquee Animation */
+/* Horizontal Marquee - Slow (65s) */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -52,11 +59,62 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 65s linear infinite;
 }
 
 .animate-marquee:hover,
 .animate-marquee:active {
+  animation-play-state: paused;
+}
+
+/* Reverse Horizontal Marquee - Slow (65s) */
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 65s linear infinite;
+}
+
+.animate-marquee-reverse:hover,
+.animate-marquee-reverse:active {
+  animation-play-state: paused;
+}
+
+/* Vertical Marquee Animations for Testimonials */
+@keyframes marquee-vertical-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-vertical-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee-vertical-up {
+  animation: marquee-vertical-up 45s linear infinite;
+}
+
+.animate-marquee-vertical-down {
+  animation: marquee-vertical-down 45s linear infinite;
+}
+
+.animate-marquee-vertical-up:hover,
+.animate-marquee-vertical-down:hover {
   animation-play-state: paused;
 }
 
@@ -67,6 +125,6 @@ body.lightbox-open {
 
 /* Selection color */
 ::selection {
-  background-color: #22d3ee33;
-  color: #fafafa;
+  background-color: #facc1566;
+  color: #0f172a;
 }

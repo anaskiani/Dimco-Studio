@@ -5,9 +5,7 @@ import { HiMenu, HiX } from 'react-icons/hi';
 import { siteConfig } from '../data/portfolio';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Gallery', href: '/gallery', isRoute: true },
   { label: 'Clients', href: '#clients' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -24,7 +22,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
@@ -37,10 +34,8 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setMobileOpen(false);
-    // If we're not on the home page, navigate there first then scroll
     if (location.pathname !== '/') {
       navigate('/');
-      // Wait for the home page DOM to mount, then scroll
       setTimeout(() => {
         const el = document.querySelector(href);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -54,57 +49,48 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50 shadow-lg shadow-black/20'
-            : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? 'py-3 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-xs' : 'py-5 bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home')}
-              className="flex items-center gap-2 group"
+              className="flex items-center group"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-violet-500 flex items-center justify-center font-black text-sm text-zinc-950">
-                AK
-              </div>
-              <span className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
-                {siteConfig.name}
-              </span>
+              <img src="/dimco-studio-logo.svg" alt={siteConfig.name} className="h-11 w-auto" />
             </motion.a>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Desktop Nav - Clean Pill Container */}
+            <div className="hidden md:flex items-center gap-1 border border-slate-200 bg-white/90 backdrop-blur-md rounded-full px-5 py-1.5 shadow-xs">
               {navLinks.map((link) =>
                 link.isRoute ? (
                   <Link
                     key={link.href}
                     to={link.href}
-                    className="relative px-4 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-300 group"
+                    className="px-4 py-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors rounded-full hover:bg-slate-100/70"
                   >
                     {link.label}
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-violet-500 group-hover:w-3/4 transition-all duration-300 rounded-full" />
                   </Link>
                 ) : (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="relative px-4 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-300 group"
+                    className="px-4 py-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors rounded-full hover:bg-slate-100/70"
                   >
                     {link.label}
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-violet-500 group-hover:w-3/4 transition-all duration-300 rounded-full" />
                   </a>
                 )
               )}
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
-                className="ml-4 px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 text-white hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
+                className="ml-2 px-5 py-1.5 text-sm font-bold rounded-full bg-amber-400 text-slate-900 hover:bg-amber-300 transition-all shadow-xs hover:shadow-md"
               >
                 Hire Me
               </a>
@@ -113,52 +99,49 @@ export default function Navbar() {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
+              className="md:hidden p-2 text-slate-700 hover:text-slate-900 transition-colors rounded-xl bg-slate-100 border border-slate-200"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+              {mobileOpen ? <HiX size={22} /> : <HiMenu size={22} />}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Drawer — rendered OUTSIDE nav to avoid backdrop-filter containing block issues */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <>
-            {/* Backdrop — covers entire viewport */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs md:hidden"
               style={{ zIndex: 60 }}
             />
-            {/* Drawer */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-72 bg-zinc-950 border-l border-zinc-800/50 md:hidden flex flex-col pt-6 px-6"
+              className="fixed top-0 right-0 bottom-0 w-72 bg-white border-l border-slate-200 md:hidden flex flex-col pt-6 px-6 shadow-2xl"
               style={{ zIndex: 70 }}
             >
-              {/* Close button */}
               <button
                 onClick={() => setMobileOpen(false)}
-                className="self-end p-2 mb-6 text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/60"
+                className="self-end p-2 mb-6 text-slate-500 hover:text-slate-900 transition-colors rounded-lg hover:bg-slate-100"
                 aria-label="Close menu"
               >
                 <HiX size={24} />
               </button>
               {navLinks.map((link, i) =>
                 link.isRoute ? (
-                  <motion.div key={link.href} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.1 }}>
+                  <motion.div key={link.href} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.08 }}>
                     <Link
                       to={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-4 text-lg font-medium text-zinc-300 hover:text-cyan-400 transition-colors border-b border-zinc-800/50"
+                      className="block py-4 text-base font-semibold text-slate-700 hover:text-amber-500 transition-colors border-b border-slate-100"
                     >
                       {link.label}
                     </Link>
@@ -170,8 +153,8 @@ export default function Navbar() {
                     onClick={(e) => handleNavClick(e, link.href)}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="py-4 text-lg font-medium text-zinc-300 hover:text-cyan-400 transition-colors border-b border-zinc-800/50"
+                    transition={{ delay: i * 0.08 }}
+                    className="py-4 text-base font-semibold text-slate-700 hover:text-amber-500 transition-colors border-b border-slate-100"
                   >
                     {link.label}
                   </motion.a>
@@ -182,8 +165,8 @@ export default function Navbar() {
                 onClick={(e) => handleNavClick(e, '#contact')}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="mt-6 px-6 py-3 text-center font-semibold rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 text-white"
+                transition={{ delay: 0.3 }}
+                className="mt-6 px-6 py-3 text-center font-bold rounded-xl bg-amber-400 text-slate-900 hover:bg-amber-300 shadow-md"
               >
                 Hire Me
               </motion.a>

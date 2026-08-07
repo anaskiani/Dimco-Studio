@@ -3,7 +3,6 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Lightbox from './components/Lightbox';
 import HomePage from './pages/HomePage';
-import GalleryPage from './pages/GalleryPage';
 import { categories } from './data/portfolio';
 
 export default function App() {
@@ -54,7 +53,6 @@ export default function App() {
             </>
           }
         />
-        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </HashRouter>
   );

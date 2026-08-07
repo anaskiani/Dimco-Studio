@@ -110,7 +110,7 @@ export default function Lightbox({
           {/* Top Bar */}
           <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 sm:px-8 py-4 z-10">
             <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold text-cyan-400">
+              <span className="text-sm font-semibold text-amber-400">
                 {category?.title}
               </span>
               <span className="text-sm text-zinc-500">
