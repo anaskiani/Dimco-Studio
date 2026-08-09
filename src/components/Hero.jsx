@@ -32,7 +32,7 @@ export default function Hero() {
         >
           <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full border-4 border-amber-400 p-1 shadow-xl bg-amber-400 flex items-center justify-center overflow-hidden transform hover:scale-105 transition-transform duration-300">
             <img
-              src="/images/avatar.png"
+              src="/images/avatar.jpeg"
               alt={siteConfig.name}
               className="w-full h-full object-cover rounded-full"
             />

@@ -1,22 +1,52 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { testimonials } from '../data/portfolio';
+
+function TestimonialAvatar({ item }) {
+  const [imageUnavailable, setImageUnavailable] = useState(false);
+  const initials = item.name
+    .split(' ')
+    .map((word) => word[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+
+  if (imageUnavailable) {
+    return (
+      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-xs font-bold text-white shadow-xs border border-slate-100">
+        {initials}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={item.avatar}
+      alt={item.name}
+      onError={() => setImageUnavailable(true)}
+      className="w-10 h-10 rounded-full object-cover shadow-xs border border-slate-100"
+    />
+  );
+}
 
 function TestimonialCard({ item }) {
   return (
     <div className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-left">
       <div className="flex items-center gap-3">
-        <img
-          src={item.avatar}
-          alt={item.name}
-          className="w-10 h-10 rounded-full object-cover shadow-xs border border-slate-100"
-        />
-        <h4 className="font-extrabold text-slate-900 text-sm">
-          {item.name}
-        </h4>
+        <TestimonialAvatar item={item} />
+        <div>
+          <h4 className="font-extrabold text-slate-900 text-sm">
+            {item.name}
+          </h4>
+          <p className="text-xs font-medium text-slate-400">{item.handle}</p>
+        </div>
       </div>
       <p className="text-slate-600 text-xs font-medium leading-relaxed">
         {item.text}
       </p>
+      <span className="w-fit rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-amber-700 border border-amber-200">
+        {item.recommendationLevel}
+      </span>
     </div>
   );
 }

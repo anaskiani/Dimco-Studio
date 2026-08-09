@@ -59,7 +59,7 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 65s linear infinite;
+  animation: marquee 100s linear infinite;
 }
 
 .animate-marquee:hover,
@@ -78,7 +78,15 @@ body {
 }
 
 .animate-marquee-reverse {
-  animation: marquee-reverse 65s linear infinite;
+  animation: marquee-reverse 100s linear infinite;
+}
+
+.animate-portfolio-marquee {
+  animation: marquee 150s linear infinite;
+}
+
+.animate-portfolio-marquee-reverse {
+  animation: marquee-reverse 150s linear infinite;
 }
 
 .animate-marquee-reverse:hover,

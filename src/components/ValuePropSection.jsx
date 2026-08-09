@@ -43,7 +43,7 @@ export default function ValuePropSection() {
             {/* Thumbnail Mockup Box */}
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-md border-2 border-white bg-slate-900 group">
               <img
-                src="/images/avatar.png"
+                src="/images/avatar.jpeg"
                 alt="Dimco Studio thumbnail example"
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-300"
               />
@@ -85,7 +85,7 @@ export default function ValuePropSection() {
                 >
                   {i === 4 && (
                     <img
-                      src="/images/avatar.png"
+                      src="/images/avatar.jpeg"
                       alt="Dimco Studio"
                       className="w-full h-full object-cover object-center"
                     />

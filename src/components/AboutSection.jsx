@@ -72,7 +72,7 @@ export default function AboutSection() {
               <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-3xl bg-amber-50/80 border border-amber-200 shadow-lg p-6 flex flex-col items-center justify-center text-center relative overflow-hidden backdrop-blur-xs">
                 <div className="w-28 h-28 rounded-full bg-amber-400 p-1 mb-4 shadow-md flex items-center justify-center">
                   <img
-                    src="/images/avatar.png"
+                    src="/images/avatar.jpeg"
                     alt="Dimco Studio designer"
                     className="w-full h-full object-cover rounded-full"
                   />

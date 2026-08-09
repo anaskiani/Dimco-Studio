@@ -55,12 +55,8 @@ export default function PortfolioSection({ onThumbnailClick }) {
 
         {/* 2-Way Sliding Marquee Rows (Without Category Headings) */}
         <div className="relative mb-12 flex flex-col gap-6 overflow-hidden">
-          {/* Fade edges left and right */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
           {/* Row 1: Sliding Left */}
-          <div className="flex animate-marquee hover:[animation-play-state:paused] w-max gap-3 sm:gap-5 items-center py-2">
+          <div className="flex animate-portfolio-marquee hover:[animation-play-state:paused] w-max gap-3 sm:gap-5 items-center py-2">
             {row1.map((item, i) => (
               <div
                 key={`r1-${item.id}-${i}`}
@@ -78,7 +74,7 @@ export default function PortfolioSection({ onThumbnailClick }) {
           </div>
 
           {/* Row 2: Sliding Right */}
-          <div className="flex animate-marquee-reverse hover:[animation-play-state:paused] w-max gap-3 sm:gap-5 items-center py-2">
+          <div className="flex animate-portfolio-marquee-reverse hover:[animation-play-state:paused] w-max gap-3 sm:gap-5 items-center py-2">
             {row2.map((item, i) => (
               <div
                 key={`r2-${item.id}-${i}`}
