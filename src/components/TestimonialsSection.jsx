@@ -29,9 +29,9 @@ function TestimonialAvatar({ item }) {
   );
 }
 
-function TestimonialCard({ item }) {
+function TestimonialCard({ item, className = '' }) {
   return (
-    <div className="bg-white border border-slate-200/90 rounded-3xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-left">
+    <div className={`bg-white border border-slate-200/90 rounded-3xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-left ${className}`}>
       <div className="flex items-center gap-3">
         <TestimonialAvatar item={item} />
         <div>
@@ -52,7 +52,9 @@ function TestimonialCard({ item }) {
 }
 
 export default function TestimonialsSection() {
-  // Split testimonials into 3 column sets
+  const desktopTestimonials = [...testimonials, ...testimonials];
+
+  // Mobile vertical marquee data
   const col1 = [...testimonials.slice(0, 3), ...testimonials.slice(0, 3)];
   const col2 = [...testimonials.slice(3, 6), ...testimonials.slice(3, 6)];
   const col3 = [...testimonials.slice(5), ...testimonials.slice(0, 2), ...testimonials.slice(5), ...testimonials.slice(0, 2)];
@@ -85,35 +87,27 @@ export default function TestimonialsSection() {
           Client Says
         </motion.h2>
 
-        {/* 3-Column Vertical Auto-Scrolling Slider Container */}
-        <div className="relative h-[480px] overflow-hidden">
+        {/* Desktop horizontal marquee */}
+        <div className="hidden md:block overflow-hidden">
+          <div className="flex w-max gap-6 animate-marquee hover:[animation-play-state:paused] py-2">
+            {desktopTestimonials.map((item, index) => (
+              <TestimonialCard key={`desktop-${item.id}-${index}`} item={item} className="w-80 flex-none" />
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile vertical marquee */}
+        <div className="relative h-[480px] overflow-hidden md:hidden">
           {/* Top & Bottom Gradient Fades */}
           <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
+          <div className="flex flex-col gap-4 animate-marquee-vertical-up hover:[animation-play-state:paused]">
             
             {/* Column 1: Vertical Up */}
-            <div className="flex flex-col gap-4 animate-marquee-vertical-up hover:[animation-play-state:paused]">
-              {col1.map((item, i) => (
-                <TestimonialCard key={`c1-${i}`} item={item} />
-              ))}
-            </div>
-
-            {/* Column 2: Vertical Down */}
-            <div className="hidden md:flex flex-col gap-4 animate-marquee-vertical-down hover:[animation-play-state:paused]">
-              {col2.map((item, i) => (
-                <TestimonialCard key={`c2-${i}`} item={item} />
-              ))}
-            </div>
-
-            {/* Column 3: Vertical Up */}
-            <div className="hidden md:flex flex-col gap-4 animate-marquee-vertical-up hover:[animation-play-state:paused]">
-              {col3.map((item, i) => (
-                <TestimonialCard key={`c3-${i}`} item={item} />
-              ))}
-            </div>
-
+            {col1.map((item, index) => (
+              <TestimonialCard key={`mobile-${item.id}-${index}`} item={item} />
+            ))}
           </div>
         </div>
 
